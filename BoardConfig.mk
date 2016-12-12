@@ -4,7 +4,7 @@
 LOCAL_PATH := device/samsung/fortuna3gfz
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := fortunave3g,SM-G530FZ,SM-G530H,fortuna3g
+TARGET_OTA_ASSERT_DEVICE := fortunave3g,SM-G530FZ,fortuna3g,samsung_sm_g530h
 
 # Kernel
 TARGET_KERNEL_CONFIG := msm8916_fortuna3g_fz_eur_defconfig
