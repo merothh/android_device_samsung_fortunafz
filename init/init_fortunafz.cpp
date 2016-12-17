@@ -52,7 +52,7 @@ void vendor_load_properties()
     property_get("ro.bootloader", bootloader);
 
     property_set("ro.product.model", "SM-G530FZ");
-    property_set("ro.product.device", "fortuna3gfz");
+    property_set("ro.product.device", "fortunafz");
     property_set("persist.radio.multisim.config", "dsds");
     property_set("ro.multisim.simslotcount", "2");
    

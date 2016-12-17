@@ -2,7 +2,7 @@
 
 ### Specs (Physically inspected):
   - CPU: Qualcomm MSM8216 Snapdragon 410, 1200 MHz
-  - Codename: fortuna3g
+  - Codename: fortunafz(gprimeltexx)
   - Display Panel:
   - Display Resolution: 960x540
   - EMMC:
