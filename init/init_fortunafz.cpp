@@ -44,7 +44,7 @@ void init_target_properties()
     std::string bootloader = property_get("ro.bootloader"); 
 
     property_set("ro.product.model", "SM-G530FZ");
-    property_set("ro.product.device", "fortuna3gfz");
+    property_set("ro.product.device", "fortunafz");
     property_set("persist.radio.multisim.config", "dsds");
     property_set("ro.multisim.simslotcount", "2");
 

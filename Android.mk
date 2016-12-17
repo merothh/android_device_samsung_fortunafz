@@ -16,6 +16,6 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE),fortuna3gfz)
+ifeq ($(TARGET_DEVICE),fortunafz)
 include $(call all-subdir-makefiles,$(LOCAL_PATH))
 endif
