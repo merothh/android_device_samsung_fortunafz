@@ -6,6 +6,9 @@ $(call inherit-product-if-exists, vendor/samsung/fortunafz/fortunafz-vendor.mk)
 # Overlays
 DEVICE_PACKAGE_OVERLAYS +=  device/samsung/fortunafz/overlay
 
+# System properties
+-include device/samsung/fortunafz/system_prop.mk
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/base/nfc-extras/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
@@ -24,10 +27,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/nfc/libnfc-sec-hal.conf:system/etc/libnfc-sec-hal.conf \
     $(LOCAL_PATH)/nfc/libnfc-sec.conf:system/etc/libnfc-brcm.conf \
     $(LOCAL_PATH)/nfc/nfcee_access.xml:system/etc/nfcee_access.xml
-
-# NFC workaround
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/nfc/setNFCperms:system/etc/init.d/setNFCperms
 
 # common fortuna
 $(call inherit-product, device/samsung/fortunaxx-common/fortunaxx.mk)
