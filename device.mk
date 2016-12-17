@@ -10,10 +10,11 @@ DEVICE_PACKAGE_OVERLAYS +=  device/samsung/fortuna3gfz/overlay
 PRODUCT_COPY_FILES += \
     frameworks/base/nfc-extras/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
     frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
-    frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
+    frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml
 
 #NFC
-libnfc_nci \
+PRODUCT_PACKAGES += \
+    libnfc_nci \
     NfcNci \
     Tag \
     com.android.nfc_extras
