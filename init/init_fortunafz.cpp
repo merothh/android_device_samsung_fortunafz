@@ -43,10 +43,18 @@ void init_target_properties()
 
     std::string bootloader = property_get("ro.bootloader"); 
 
-    property_set("ro.product.model", "SM-G530FZ");
-    property_set("ro.product.device", "fortunafz");
-    property_set("persist.radio.multisim.config", "dsds");
-    property_set("ro.multisim.simslotcount", "2");
+    if (strstr(bootloader, "G530FZXXU1BPI3")) {
+        property_set("ro.product.model", "SM-G530FZ");
+        property_set("ro.product.device", "fortunafz");
+        property_set("persist.radio.multisim.config", "none");
+        property_set("telephony.lteOnGsmDevice","1");
+    } else {
+        property_set("ro.product.model", "SM-G530FZ");
+        property_set("ro.product.device", "fortunafz");
+        property_set("persist.radio.multisim.config", "dsds");
+        property_set("ro.multisim.simslotcount", "2");
+        property_set("telephony.lteOnGsmDevice","1");
+    }
 
     std::string device = property_get("ro.product.device");
     INFO("Found bootloader id %s setting build properties for %s device\n", bootloader.c_str(), device.c_str());
