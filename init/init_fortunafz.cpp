@@ -45,11 +45,13 @@ void vendor_load_properties()
         property_set("ro.product.model", "SM-G530FZ");
         property_set("ro.product.device", "fortunafz");
         property_set("persist.radio.multisim.config", "none");
+        property_set("telephony.lteOnGsmDevice","1");
     } else {
         property_set("ro.product.model", "SM-G530FZ");
         property_set("ro.product.device", "fortunafz");
         property_set("persist.radio.multisim.config", "dsds");
         property_set("ro.multisim.simslotcount", "2");
+        property_set("telephony.lteOnGsmDevice","1");
     }
    
     property_get("ro.product.device", device);
