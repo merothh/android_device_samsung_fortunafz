@@ -27,9 +27,5 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/nfc/libnfc-sec.conf:system/etc/libnfc-brcm.conf \
     $(LOCAL_PATH)/nfc/nfcee_access.xml:system/etc/nfcee_access.xml \
 
-# NFC workaround
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/nfc/setNFCperms:system/etc/init.d/setNFCperms
-
 # common fortuna
 $(call inherit-product, device/samsung/fortunaxx-common/fortunaxx.mk)
