@@ -6,4 +6,4 @@ $(call inherit-product, device/samsung/fortunafz/full_fortunafz.mk)
 
 # Setup device configuration
 PRODUCT_DEVICE := fortunafz
-PRODUCT_NAME := cm_fortunafz
+PRODUCT_NAME := lineage_fortunafz
