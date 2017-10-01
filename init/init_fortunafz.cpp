@@ -32,8 +32,6 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 
-#include <android-base/strings.h>
-
 #include "vendor_init.h"
 #include "property_service.h"
 #include "log.h"
