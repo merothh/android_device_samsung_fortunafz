@@ -25,27 +25,23 @@
    IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include <fcntl.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <sys/stat.h>
+#include <sys/types.h>
 
-#include <cutils/properties.h>
+#include <android-base/strings.h>
+
 #include "vendor_init.h"
+#include "property_service.h"
 #include "log.h"
 #include "util.h"
 
 void vendor_load_properties()
 {
-    char platform[PROP_VALUE_MAX];
-    char bootloader[PROP_VALUE_MAX];
-    char device[PROP_VALUE_MAX];
-    char devicename[PROP_VALUE_MAX];
-    int rc;
-
-    rc = property_get("ro.board.platform", platform, NULL);
-    if (!rc || strncmp(platform, ANDROID_TARGET, PROP_VALUE_MAX))
-        return;
-
-    property_get("ro.bootloader", bootloader, NULL);
+    std::string bootloader = android::base::GetProperty("ro.bootloader", "");
 
     if (strstr(bootloader, "G530FZXXU1BPI3")) {
         property_set("ro.product.model", "SM-G530FZ");
@@ -56,10 +52,6 @@ void vendor_load_properties()
         property_set("ro.product.device", "fortunafz");
         property_set("persist.radio.multisim.config", "dsds");
         property_set("ro.multisim.simslotcount", "2");
-		property_set("SIM_COUNT", "2");
+        property_set("SIM_COUNT", "2");
     }
-
-    property_get("ro.product.device", device, NULL);
-    strlcpy(devicename, device, sizeof(devicename));
-    ERROR("Found bootloader id %s setting build properties for %s device\n", bootloader, devicename);
 }
