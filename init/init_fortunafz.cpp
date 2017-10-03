@@ -35,11 +35,9 @@
 #include "property_service.h"
 #include "vendor_init.h"
 
-using android::base::GetProperty;"
-
 void vendor_load_properties()
 {
-    std::string bootloader = android::base::GetProperty("ro.bootloader", "");
+    std::string bootloader = property_get("ro.bootloader", "");
 
     if (bootloader.find("G530FZXXU1BPI3") == 0) {
         property_set("ro.product.model", "SM-G530FZ");
