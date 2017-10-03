@@ -41,7 +41,7 @@ void vendor_load_properties()
 {
     std::string bootloader = android::base::GetProperty("ro.bootloader", "");
 
-    if (strstr(bootloader, "G530FZXXU1BPI3")) {
+    if (bootloader.find("G530FZXXU1BPI3") == 0) {
         property_set("ro.product.model", "SM-G530FZ");
         property_set("ro.product.device", "fortunafz");
         property_set("persist.radio.multisim.config", "none");
